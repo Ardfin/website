@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARD FINSERV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav> <h2 class="logo"><img height="100%" src="logo.jpg" alt="logo"></h2>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a class="btn" href="">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Your Trusted Partner in Financial Growth</h1>
+    <p>Empowering individuals and businesses with smart investment, insurance, and financial planning solutions since
+      2012</p>
+    <a href="#" class="btn">Start Investing</a>
+    <a href="#" class="btn secondary">Book Free Consultation</a>
+  </section>
+
+  <section class="split-section">
+    <div class="split-container">
+
+      <!-- Image -->
+      <div class="split-image">
+        <img src="logo.jpg" alt="Financial Planning">
+      </div>
+
+      <!-- Text -->
+      <div class="split-text">
+        <h2>Smart Financial Planning for Your Future</h2>
+        <p class="nice-text">
+          We help you build, protect, and grow your wealth through disciplined investment strategies,
+          personalized advice, and transparent financial solutions tailored to your goals.
+        </p>
+        <a href="/about.html" class="btn">Learn More</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="split-section linear-background">
+    <div class="split-container">
+
+      <!-- Image -->
+      <div class="split-image">
+        <img src="images/img1.jpeg" alt="Financial Planning">
+      </div>
+
+      <!-- Text -->
+      <div class="split-text">
+        <p class="nice-text" style="color: white;">
+          We help you build, protect, and grow your wealth through disciplined investment strategies,
+          personalized advice, and transparent financial solutions tailored to your goals.
+        </p>
+        
+        <a href="/about.html" class="btn">Learn More</a>
+      </div>
+    </div>
+    <br>
+    <hr>
+
+    <center class="nice-heading">Why Invest with Us?</center>
+    <br>
+
+    <div id="stats" class="numbers">
+      <div> <span class="counter" data-target="85">0</span>+ Cr <br><span class="bold">AUM</span></div>
+      <div> <span class="counter" data-target="500">0</span>+ <br><span class="bold">Clients</span></div>
+      <div> <span class="counter" data-target="10">0</span>+ Yrs <br><span class="bold">Experience</span></div>
+      <div> End to End <br><span class="bold">Services</span></div>
+    </div>
+        
+        <script>
+
+          const counters = document.querySelectorAll(".counter");
+
+          function animateCounter(el) {
+            const target = +el.getAttribute("data-target");
+            const duration = 2000;
+            let startTime = null;
+
+            function update(currentTime) {
+              if (!startTime) startTime = currentTime;
+
+              const progress = currentTime - startTime;
+              const value = Math.min(Math.floor((progress / duration) * target), target);
+
+              el.textContent = value.toLocaleString(); // adds commas
+
+              if (progress < duration) {
+                requestAnimationFrame(update);
+              }
+            }
+
+            requestAnimationFrame(update);
+          }
+
+          // Trigger when section is visible
+          const observer = new IntersectionObserver((entries) => {
+            console.log(entries);
+            if (entries[0].isIntersecting) {
+              counters.forEach(counter => animateCounter(counter));
+              observer.disconnect(); // run once
+            }
+          }, { threshold: 0.3 });
+
+
+          observer.observe(document.getElementById("stats"));
+        </script>
+  </section>
+
+  <br>
+  <br>
+
+  <section class="split-section">
+    <div class="split-container">
+      <!-- Text -->
+      <div class="split-text">
+        <h2>Who We Are</h2>
+        <p class="nice-text">
+          ARD FINSERV is a trusted financial services firm established in 2012, managing ₹100+
+      Crores AUM with a reputation for transparency and personalized service.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="split-image">
+        <img src="images/img2.jpeg" alt="Financial Planning">
+      </div>
+
+    </div>
+  </section>
+
+  <br><br>
+
+  <section class="split-section">
+    <div class="split-container">
+    
+      <!-- Image -->
+      <div class="split-image">
+        <img src="images/img3.jpeg" alt="Financial Planning">
+      </div>
+
+      <!-- Text -->
+      <div class="split-text">
+        <h2>Our Mission</h2>
+        <p class="nice-text">
+          To simplify financial goals and provide tailored solutions.
+        </p>
+        <h2>Our Vision</h2>
+        <p class="nice-text">
+          To become a leading financial advisory firm known for trust and innovation.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+    <h2>Why Choose Us</h2>
+    <div class="grid">
+      <div class="card">
+        <h2>🎯 Personalized Investment Planning</h2>
+        <p>We create customized financial plans based on your unique goals, risk tolerance, and time horizon.</p>
+
+      </div>
+      <div class="card">
+        <h2>🧠 Expert Market Knowledge</h2>
+        <p>Our team of experienced advisors stays updated with market trends to provide informed recommendations.</p>
+      </div>
+      <div class="card">
+        <h2>🔐 Transparency</h2>
+        <p>We maintain full transparency in all our operations and communications.</p>
+      </div>
+      <div class="card">
+        <h2>👥 Dedicated Support</h2>
+        <p>Our team is committed to providing personalized support throughout your financial journey.</p>
+      </div>
+      <div class="card">
+        <h2>📈 Long-term Wealth Creation</h2>
+        <p>We focus on building sustainable wealth for our clients over the long term.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section>
+    <h2>Testimonials</h2>
+    <blockquote class="big-quote">
+      "ARD FINSERV helped me plan my investments in a structured way. Highly recommended!"
+</blockquote>
+  </section>
+
+  <!-- FORM -->
+<section class="form">
+  <h2>Start your financial journey today</h2>
+  <p>Fill the form and our advisor will connect within 24 hours.</p>
+  <input type="text" placeholder="Name">
+  <input type="text" placeholder="Phone">
+  <input type="email" placeholder="Email">
+  <button>Submit</button>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Office Address: Your Address</p>
+    <p>📞 Phone: Your Number</p>
+    <p>📧 Email: Your Email</p>
+    <p>🕒 Mon–Sat, 9:30 AM – 6:30 PM</p>
+    <br>
+    <a href="#" class="btn">Book Free Consultation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 ARD FINSERV</p>
+    <p>Mutual Fund investments are subject to market risks. Please read all documents carefully.</p>
+  </footer>
+
+</body>
+
+</html>
