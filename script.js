@@ -31,3 +31,48 @@ window.addEventListener('resize', function() {
     hamburger.classList.remove('active');
   }
 });
+
+
+const texts = [
+  "Helping you to grow your wealth",
+  "We provide right product for your need"
+];
+
+const speed = 50;
+const eraseSpeed = 30;
+const delay = 1200;
+
+function sleep(ms) {
+  return new Promise(res => setTimeout(res, ms));
+}
+
+async function type(el, text) {
+  el.classList.add("typing");
+  for (let i = 0; i < text.length; i++) {
+    el.textContent += text[i];
+    await sleep(speed);
+  }
+  el.classList.remove("typing");
+}
+
+async function erase(el) {
+  el.classList.add("typing");
+  while (el.textContent.length > 0) {
+    el.textContent = el.textContent.slice(0, -1);
+    await sleep(eraseSpeed);
+  }
+  el.classList.remove("typing");
+}
+
+async function loop() {
+  const el = document.getElementById("text");
+  let i = 0;
+
+  while (true) {
+    await type(el, texts[i]);
+    await sleep(delay);
+    await erase(el);
+
+    i = (i + 1) % texts.length; // switch line
+  }
+}

@@ -14,7 +14,8 @@
 
   <!-- NAVBAR -->
 
-  <nav> <h2 class="logo"><img height="100%" src="logo.jpg" alt="logo"></h2>
+  <nav>
+    <h2 class="logo"><img height="100%" src="logo.jpg" alt="logo"></h2>
     <div class="hamburger" onclick="toggleMobileMenu()">
       <span></span>
       <span></span>
@@ -25,17 +26,23 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/services.html">Services</a></li>
       <li><a href="/contact.html">Contact</a></li>
-      <li><a class="btn" href="">Login</a></li>
+      <li><a class="btn" href="https://ardfinserv.investwell.app/app/#/login" target="_blank">Login</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Your Trusted Partner in Financial Growth</h1>
+    <!-- <h1>Your Trusted Partner in Financial Growth</h1> -->
+    <div class="text" id="text"></div>
+    
+    </div>
     <p>Empowering individuals and businesses with smart investment, insurance, and financial planning solutions since
       2012</p>
-    <a href="#" class="btn">Start Investing</a>
     <a href="#" class="btn secondary">Book Free Consultation</a>
+
+    <script>
+      loop();
+    </script>
   </section>
 
   <section class="split-section">
@@ -73,7 +80,7 @@
           We help you build, protect, and grow your wealth through disciplined investment strategies,
           personalized advice, and transparent financial solutions tailored to your goals.
         </p>
-        
+
         <a href="/about.html" class="btn">Learn More</a>
       </div>
     </div>
@@ -84,49 +91,49 @@
     <br>
 
     <div id="stats" class="numbers">
-      <div> <span class="counter" data-target="85">0</span>+ Cr <br><span class="bold">AUM</span></div>
-      <div> <span class="counter" data-target="500">0</span>+ <br><span class="bold">Clients</span></div>
-      <div> <span class="counter" data-target="10">0</span>+ Yrs <br><span class="bold">Experience</span></div>
+      <div> <span class="counter" data-target="100">0</span>+ Cr <br><span class="bold">AUM</span></div>
+      <div> <span class="counter" data-target="2500">0</span>+ <br><span class="bold">Clients</span></div>
+      <div> <span class="counter" data-target="14">0</span>+ Yrs <br><span class="bold">Experience</span></div>
       <div> End to End <br><span class="bold">Services</span></div>
     </div>
-        
-        <script>
 
-          const counters = document.querySelectorAll(".counter");
+    <script>
 
-          function animateCounter(el) {
-            const target = +el.getAttribute("data-target");
-            const duration = 2000;
-            let startTime = null;
+      const counters = document.querySelectorAll(".counter");
 
-            function update(currentTime) {
-              if (!startTime) startTime = currentTime;
+      function animateCounter(el) {
+        const target = +el.getAttribute("data-target");
+        const duration = 2000;
+        let startTime = null;
 
-              const progress = currentTime - startTime;
-              const value = Math.min(Math.floor((progress / duration) * target), target);
+        function update(currentTime) {
+          if (!startTime) startTime = currentTime;
 
-              el.textContent = value.toLocaleString(); // adds commas
+          const progress = currentTime - startTime;
+          const value = Math.min(Math.floor((progress / duration) * target), target);
 
-              if (progress < duration) {
-                requestAnimationFrame(update);
-              }
-            }
+          el.textContent = value.toLocaleString(); // adds commas
 
+          if (progress < duration) {
             requestAnimationFrame(update);
           }
+        }
 
-          // Trigger when section is visible
-          const observer = new IntersectionObserver((entries) => {
-            console.log(entries);
-            if (entries[0].isIntersecting) {
-              counters.forEach(counter => animateCounter(counter));
-              observer.disconnect(); // run once
-            }
-          }, { threshold: 0.3 });
+        requestAnimationFrame(update);
+      }
+
+      // Trigger when section is visible
+      const observer = new IntersectionObserver((entries) => {
+        console.log(entries);
+        if (entries[0].isIntersecting) {
+          counters.forEach(counter => animateCounter(counter));
+          observer.disconnect(); // run once
+        }
+      }, { threshold: 0.3 });
 
 
-          observer.observe(document.getElementById("stats"));
-        </script>
+      observer.observe(document.getElementById("stats"));
+    </script>
   </section>
 
   <br>
@@ -139,7 +146,7 @@
         <h2>Who We Are</h2>
         <p class="nice-text">
           ARD FINSERV is a trusted financial services firm established in 2012, managing ₹100+
-      Crores AUM with a reputation for transparency and personalized service.
+          Crores AUM with a reputation for transparency and personalized service.
         </p>
       </div>
 
@@ -155,7 +162,7 @@
 
   <section class="split-section">
     <div class="split-container">
-    
+
       <!-- Image -->
       <div class="split-image">
         <img src="images/img3.jpeg" alt="Financial Planning">
@@ -165,13 +172,141 @@
       <div class="split-text">
         <h2>Our Mission</h2>
         <p class="nice-text">
-          To simplify financial goals and provide tailored solutions.
+          Our mission is to empower 10,000 clients to achieve financial freedom by building a ₹10 crore corpus.
         </p>
         <h2>Our Vision</h2>
         <p class="nice-text">
-          To become a leading financial advisory firm known for trust and innovation.
+          To empower every client to achieve financial freedom.
       </div>
 
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Value To You</h2>
+    <div style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: center;">
+
+      <div class="dual-card">
+
+        <div class="title">Strategy</div>
+
+
+        <div class="description">We help you define clear financial goals, craft a robust long-term goal based plan,
+          and build a personalised portfolio to help fund your aspirations.</div>
+
+        <div style="display: flex;">
+          <h3>20%</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="--value:20%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dual-card">
+
+        <div class="title">Behaviourial Coaching</div>
+
+
+        <div class="description">The real challenge isn’t building the plan — it’s sticking to it. We coach you to stay
+          the course through all market cycles, economic headlines, fads, and fears.</div>
+
+        <div style="display: flex;">
+          <h3>80%</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="--value:80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dual-card">
+
+        <div class="title">Market Timing</div>
+
+
+        <div class="description">We don’t chase tops and bottoms. We believe time in the market beats timing the market.
+        </div>
+
+        <div style="display: flex;">
+          <h3>0%</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="--value:0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dual-card">
+
+        <div class="title">Portfolio Churning</div>
+
+
+        <div class="description">We don’t reshuffle your portfolio to chase trends. Fads fade. Unnecessary activity
+          often causes more harm than good.</div>
+
+        <div style="display: flex;">
+          <h3>0%</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="--value:0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dual-card">
+
+        <div class="title">Get Rich Quick Schemes</div>
+
+
+        <div class="description">We don’t promise overnight wealth. Compounding takes time.</div>
+
+        <div style="display: flex;">
+          <h3>0%</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="--value:0%;"></div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Our Philosophy</h2>
+
+    <center>
+      <p>
+        At the heart of everything we do is a deep commitment to trust, transparency, and long-term partnership.
+        <br>
+        We stand by these core principles:
+      </p>
+    </center>
+    <br>
+    <div class="grid">
+      <div class="card">
+        <h2>Client-First Always</h2>
+        <p>We keep your interests ahead of everything else —your interests are our utmost priority </p>
+      </div>
+      <div class="card">
+        <h2>Advice We Personally Follow</h2>
+        <p>We only suggest what we do ourselves. If it’s not good enough for our portfolio, it’s not good enough for
+          yours.</p>
+      </div>
+      <div class="card">
+        <h2>Client-First Always</h2>
+        <p>We keep your interests ahead of everything else —your interests are our utmost priority </p>
+      </div>
+      <div class="card">
+        <h2>Educate & Empower</h2>
+        <p>Our mission is to simplify finance, so you’re confident and in control of your financial decisions.</p>
+      </div>
+      <div class="card">
+        <h2>Data Confidentiality</h2>
+        <p>Your information stays secure. We respect your privacy and treat your data with utmost care.</p>
+      </div>
+      <div class="card">
+        <h2>Financial Freedom For Life</h2>
+        <p>We aren’t just building wealth — we’re guiding you towards true financial independence and peace of mind</p>
+      </div>
     </div>
   </section>
 
@@ -208,28 +343,31 @@
     <h2>Testimonials</h2>
     <blockquote class="big-quote">
       "ARD FINSERV helped me plan my investments in a structured way. Highly recommended!"
-</blockquote>
+    </blockquote>
   </section>
 
   <!-- FORM -->
-<section class="form">
-  <h2>Start your financial journey today</h2>
-  <p>Fill the form and our advisor will connect within 24 hours.</p>
-  <input type="text" placeholder="Name">
-  <input type="text" placeholder="Phone">
-  <input type="email" placeholder="Email">
-  <button>Submit</button>
-</section>
+  <section class="form">
+    <h2>Start your financial journey today</h2>
+    <p>Fill the form and our advisor will connect within 24 hours.</p>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Phone">
+    <input type="email" placeholder="Email">
+    <button>Submit</button>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>📍 Office Address: Your Address</p>
-    <p>📞 Phone: Your Number</p>
-    <p>📧 Email: Your Email</p>
-    <p>🕒 Mon–Sat, 9:30 AM – 6:30 PM</p>
+    <p>📍 Corporate Office Address: T-19 3rd floor, Alfran Plaza, Panjim Tiswadi, North Goa - 403001</p>
+    <p>📍 Registered Office Address: ARD FINSERV. Opp Namrata Pahrmacy, Vikas Carambolim, Corlim Tiswadi, North Goa -
+      403110</p>
+    <p>📞 Phone: <a href="phone:+91 97646 81789">+91 97646 81789</a> / <a href="phone:+91 93250 75457">+91 93250
+        75457</a></p>
+    <p>📧 Email: ardfinserv@gmail.com</p>
+    <p>🕒 Mon–Sat, 9:00 AM – 6:00 PM</p>
     <br>
-    <a href="#" class="btn">Book Free Consultation</a>
+    <a href="/contact.html" class="btn">Book Free Consultation</a>
   </section>
 
   <!-- FOOTER -->

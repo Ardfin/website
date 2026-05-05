@@ -1,8 +1,7 @@
-
 :root {
-  --primary-color: #ee8cfd;
-  --secondary-color: #00518a;
-  --btn-color: #a600a9;
+  --primary-color: #003a9e;
+  --secondary-color: #008cf0;
+  --btn-color: #001264;
   --background-color: #f9f9f9;
   --text-color: #333;
 }
@@ -132,13 +131,19 @@ nav a:hover {
   color: white;
   background: var(--btn-color);
   outline: none;
-  border: none;
+  border: 1px solid var(--btn-color);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn.secondary {
   background: transparent;
   border: 1px solid white;
+}
+
+.btn:hover {
+  background: white;
+  color: var(--btn-color);
 }
 
 .big-quote {
@@ -182,7 +187,7 @@ nav a:hover {
 }
 
 .nice-heading {
-  color: var(--secondary-color);
+  color: var(--btn-color);
   margin-top: 1.1rem;
   font-size: 2rem;
   font-style: italic;
@@ -219,13 +224,14 @@ hr {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid var(--secondary-color);
-  background: var(--primary-color);
+  background: var(--secondary-color);
   text-align: center;
   position: relative;
   padding: 2rem;
   border-radius: 12px;
   z-index: 1;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 /* Gradient Border Effect */
@@ -233,15 +239,20 @@ hr {
   content: "";
   position: absolute;
   inset: 0;
-  padding: 2px; /* thickness of border */
+  padding: 2px;
+  /* thickness of border */
   border-radius: 12px;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--btn-color), var(--accent-color));
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
   z-index: -1;
+}
+
+.card:hover {
+  background: white;
 }
 
 /* 007bff, #00c6ff, #7b2ff7, #ff7a18); */
@@ -350,13 +361,35 @@ footer {
   color: var(--text-color);
 }
 
-.numbers{
+.space12 {
+  width: 6px;
+}
+
+.sip-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
+.numbers {
   display: flex;
   gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
   padding: 3rem;
 }
+
 .numbers div {
   width: 45%;
   font-size: 3rem;
@@ -369,7 +402,7 @@ footer {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.bold{
+.bold {
   font-weight: 500;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
@@ -437,9 +470,109 @@ footer {
   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
+.dual-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 800px;
+  max-width: 650px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 🔵 Circular Progress */
+.circle {
+  --value: 0; /* default */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color) calc(var(--value) * 1%), #e5e7eb 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.circle span {
+  position: absolute;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 🟢 Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: var(--value);
+  /* change this */
+  background: #4f46e5;
+  border-radius: 10px;
+}
+
+.text {
+  line-height: 2rem;
+  font-size: 26px;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typing {
+  animation: blink 0.8s infinite;
+}
 
 /* MOBILE */
 @media(max-width: 768px) {
+
+  .dual-card {
+    padding: 15px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle::before {
+    width: 75px;
+    height: 75px;
+  }
+
   .form {
     padding: 20px 15px;
   }
@@ -447,6 +580,7 @@ footer {
   .form h2 {
     font-size: 20px;
   }
+
   .hero h1 {
     font-size: 28px;
   }
@@ -460,6 +594,7 @@ footer {
     text-align: center;
     width: 100%;
   }
+
   .split-image {
     width: 100%;
   }
@@ -467,19 +602,21 @@ footer {
   .split-text h2 {
     font-size: 24px;
   }
-  .numbers div{
-    width: 300px;;
+
+  .numbers div {
+    width: 300px;
+    ;
   }
-  
+
   nav {
     padding: 15px 20px;
     justify-content: space-between;
   }
-  
+
   .hamburger {
     display: flex;
   }
-  
+
   nav ul {
     position: fixed;
     top: 0;
@@ -493,13 +630,13 @@ footer {
     align-items: center;
     padding-top: 100px;
     transition: right 0.3s ease-in-out;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   nav ul.mobile-open {
     right: 0;
   }
-  
+
   nav ul li {
     margin: 5px 0;
     opacity: 0;
@@ -507,21 +644,38 @@ footer {
     animation: slideIn 0.3s ease forwards;
     border-bottom: 1px solid var(--secondary-color);
   }
-  
-  nav ul li:nth-child(1) { animation-delay: 0.1s; }
-  nav ul li:nth-child(2) { animation-delay: 0.2s; }
-  nav ul li:nth-child(3) { animation-delay: 0.3s; }
-  nav ul li:nth-child(4) { animation-delay: 0.4s; }
-  nav ul li:nth-child(5) { animation-delay: 0.5s; }
-  nav ul li:nth-child(6) { animation-delay: 0.6s; }
-  
+
+  nav ul li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  nav ul li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  nav ul li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  nav ul li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  nav ul li:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  nav ul li:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
   @keyframes slideIn {
     to {
       opacity: 1;
       transform: translateX(0);
     }
   }
-  
+
   nav ul li a {
     font-size: 1.2rem;
     padding: 15px 20px;
