@@ -34,9 +34,9 @@
   <section class="hero">
     <!-- <h1>Your Trusted Partner in Financial Growth</h1> -->
     <div class="text" id="text"></div>
-    
+
     </div>
-    <p>Empowering individuals and businesses with smart investment, insurance, and financial planning solutions since
+    <p>Empowering individuals and businesses with smart investment, insurance, and financial strategic solutions since
       2012</p>
     <a href="/contact.html" class="btn secondary">Book Free Consultation</a>
 
@@ -55,7 +55,7 @@
 
       <!-- Text -->
       <div class="split-text">
-        <h2>Smart Financial Planning for Your Future</h2>
+        <h2>Smart Financial Strategy for Your Future</h2>
         <p class="nice-text">
           We help you build, protect, and grow your wealth through disciplined investment strategies,
           personalized advice, and transparent financial solutions tailored to your goals.
@@ -315,7 +315,7 @@
     <h2>Why Choose Us</h2>
     <div class="grid">
       <div class="card">
-        <h2>🎯 Personalized Investment Planning</h2>
+        <h2>🎯 Personalized Investment Strategy</h2>
         <p>We create customized financial plans based on your unique goals, risk tolerance, and time horizon.</p>
 
       </div>
@@ -339,11 +339,49 @@
   </section>
 
   <!-- TESTIMONIAL -->
+
+
   <section>
     <h2>Testimonials</h2>
-    <blockquote class="big-quote">
-      "ARD FINSERV helped me plan my investments in a structured way. Highly recommended!"
-    </blockquote>
+
+    <div class="carousel">
+      <div class="slides" id="slides">
+        <div class="slide">
+            <blockquote class="big-quote">
+              "ARD FINSERV helped me plan my investments in a structured way. Highly recommended!"
+            </blockquote>
+        </div>
+
+        <div class="slide">
+            <blockquote class="big-quote">
+              "ARD Finserv is a very helpful and trustworthy financial firm. They give good advice about saving and investing money. The team explains everything in simple words and helps you choose the best options for your future. They are friendly, professional, and always ready to help. I’m very happy with their service and would surely recommend ARD Finserv to others."
+            </blockquote>
+        </div>
+        <div class="slide">
+            <blockquote class="big-quote">
+              "Excellent service and smooth process. The team is professional, responsive, and reliable. Highly recommended."
+            </blockquote>
+        </div>
+        <div class="slide">
+            <blockquote class="big-quote">
+              "A great experience  of starting the journey of investment"
+            </blockquote>
+        </div>
+        <div class="slide">
+            <blockquote class="big-quote">
+              "Expert in financial planning as well as good in giving advices and telling what is better for our future... so I feel this ARD Investment is life time investment...."
+            </blockquote>
+        </div>
+
+        <div class="slide">
+            <blockquote class="big-quote">
+              "The staff is very professional, transparent and helpful throughout the process. Highly recommend for anyone looking for reliable financial advices.They explain everything clearly and made the whole process easy."
+            </blockquote>
+        </div>
+
+      
+    </div>
+    <div class="indicators" id="indicators"></div>
   </section>
 
   <!-- FORM -->
@@ -360,7 +398,8 @@
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>📍 Corporate Office Address: T-19 3rd floor, Alfran Plaza, Panjim Tiswadi, North Goa - 403001</p>
-    <p>📍 Registered Office Address: ARD FINSERV. Opp Namrata Pahrmacy, Vikas Carambolim, Corlim Tiswadi, North Goa -
+    <p>📍 Registered Office Address: ARD FINSERV. Opp Namrata Pahrmacy, Vikas Nagar, Carambolim, Corlim Tiswadi, North
+      Goa -
       403110</p>
     <p>📞 Phone: <a href="phone:+91 97646 81789">+91 97646 81789</a> / <a href="phone:+91 93250 75457">+91 93250
         75457</a></p>
@@ -377,5 +416,43 @@
   </footer>
 
 </body>
+
+<script>
+  const slides = document.getElementById("slides");
+const totalSlides = document.querySelectorAll(".slide").length;
+const indicators = document.getElementById("indicators");
+
+console.log(slides);
+
+let index = 0;
+
+// Create dots
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+
+  if (i === 0) dot.classList.add("active");
+
+  indicators.appendChild(dot);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+function updateCarousel() {
+  console.log(slides);
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function nextSlide() {
+  index = (index + 1) % totalSlides;
+  updateCarousel();
+}
+
+setInterval(nextSlide, 3000);
+
+</script>
 
 </html>

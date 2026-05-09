@@ -1,7 +1,7 @@
 
 function goToPage(name) {
-    // go to name.html
-    window.location.href = name + ".html";
+  // go to name.html
+  window.location.href = name + ".html";
 }
 
 // Hamburger mobile menu toggle
@@ -13,7 +13,7 @@ function toggleMobileMenu() {
 }
 
 // Close mobile menu when clicking a link
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   if (e.target.tagName === 'A' && window.innerWidth <= 768) {
     const navUl = document.querySelector('nav ul');
     const hamburger = document.querySelector('.hamburger');
@@ -23,7 +23,7 @@ document.addEventListener('click', function(e) {
 });
 
 // Close menu on window resize >768px
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   if (window.innerWidth > 768) {
     const navUl = document.querySelector('nav ul');
     const hamburger = document.querySelector('.hamburger');
