@@ -3,13 +3,14 @@
   --secondary-color: #008cf0;
   --btn-color: #001264;
   --background-color: #f9f9f9;
-  --text-color: #333;
+  --text-color: #424242;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 html {
@@ -181,18 +182,18 @@ nav a:hover {
   color: var(--text-color);
   margin-top: 1rem;
   font-size: 2rem;
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .nice-heading {
   color: var(--btn-color);
   margin-top: 1.1rem;
   font-size: 2rem;
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: bolder;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 /* SECTIONS */
@@ -450,14 +451,14 @@ footer {
   line-height: 6rem;
   padding: 1rem;
   font-weight: 500;
-  font-style: italic;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-style: italic; */
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .bold {
   font-weight: 500;
-  font-style: italic;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-style: italic; */
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 /* Form container */
@@ -596,8 +597,20 @@ footer {
   line-height: 2rem;
   font-size: 26px;
   border-right: 2px solid #fff;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: wrap;
+  overflow: visible;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+.social-media a{
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
 }
 
 /* Cursor blink */

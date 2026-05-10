@@ -7,6 +7,10 @@
   <title>ARD FINSERV</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Fontawesom CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="script.js"></script>
 </head>
 
@@ -172,7 +176,7 @@
       <div class="split-text">
         <h2>Our Mission</h2>
         <p class="nice-text">
-          Our mission is to empower 10,000 clients to achieve financial freedom by building a ₹10 crore corpus.
+          Our mission is to empower 1,00,000 clients to achieve financial freedom by building a ₹ 1 crore corpus.
         </p>
         <h2>Our Vision</h2>
         <p class="nice-text">
@@ -347,41 +351,47 @@
     <div class="carousel">
       <div class="slides" id="slides">
         <div class="slide">
-            <blockquote class="big-quote">
-              "ARD FINSERV helped me plan my investments in a structured way. Highly recommended!"
-            </blockquote>
+          <blockquote class="big-quote">
+            "ARD FINSERV helped me plan my investments in a structured way. Highly recommended!"
+          </blockquote>
         </div>
 
         <div class="slide">
-            <blockquote class="big-quote">
-              "ARD Finserv is a very helpful and trustworthy financial firm. They give good advice about saving and investing money. The team explains everything in simple words and helps you choose the best options for your future. They are friendly, professional, and always ready to help. I’m very happy with their service and would surely recommend ARD Finserv to others."
-            </blockquote>
+          <blockquote class="big-quote">
+            "ARD Finserv is a very helpful and trustworthy financial firm. They give good advice about saving and
+            investing money. The team explains everything in simple words and helps you choose the best options for your
+            future. They are friendly, professional, and always ready to help. I’m very happy with their service and
+            would surely recommend ARD Finserv to others."
+          </blockquote>
         </div>
         <div class="slide">
-            <blockquote class="big-quote">
-              "Excellent service and smooth process. The team is professional, responsive, and reliable. Highly recommended."
-            </blockquote>
+          <blockquote class="big-quote">
+            "Excellent service and smooth process. The team is professional, responsive, and reliable. Highly
+            recommended."
+          </blockquote>
         </div>
         <div class="slide">
-            <blockquote class="big-quote">
-              "A great experience  of starting the journey of investment"
-            </blockquote>
+          <blockquote class="big-quote">
+            "A great experience of starting the journey of investment"
+          </blockquote>
         </div>
         <div class="slide">
-            <blockquote class="big-quote">
-              "Expert in financial planning as well as good in giving advices and telling what is better for our future... so I feel this ARD Investment is life time investment...."
-            </blockquote>
+          <blockquote class="big-quote">
+            "Expert in financial planning as well as good in giving advices and telling what is better for our future...
+            so I feel this ARD Investment is life time investment...."
+          </blockquote>
         </div>
 
         <div class="slide">
-            <blockquote class="big-quote">
-              "The staff is very professional, transparent and helpful throughout the process. Highly recommend for anyone looking for reliable financial advices.They explain everything clearly and made the whole process easy."
-            </blockquote>
+          <blockquote class="big-quote">
+            "The staff is very professional, transparent and helpful throughout the process. Highly recommend for anyone
+            looking for reliable financial advices.They explain everything clearly and made the whole process easy."
+          </blockquote>
         </div>
 
-      
-    </div>
-    <div class="indicators" id="indicators"></div>
+
+      </div>
+      <div class="indicators" id="indicators"></div>
   </section>
 
   <!-- FORM -->
@@ -411,47 +421,62 @@
 
   <!-- FOOTER -->
   <footer>
+    <div class="social-media">
+      <a href="https://www.instagram.com/ard_finserv?igsh=OXFzOTI4b3ptN3Vh" target="_blank"><i
+          class="fa-brands fa-instagram"></i></i></a>
+      <a href="https://www.facebook.com/share/14gd7oGKTvH/" target="_blank"><i
+          class="fa-brands fa-facebook"></i></i></a>
+      <!-- Whatsapp -->
+      <a href="https://wa.me/9325075457" target="_blank"><i class="fa-brands fa-whatsapp"></i></i></a>
+    </div>
+    <br>
     <p>© 2026 ARD FINSERV</p>
-    <p>Mutual Fund investments are subject to market risks. Please read all documents carefully.</p>
+    <br>
+    <p>
+      <b>DISCLAIMER</b>: Mutual fund investments are subject to market risks. Please read all scheme-related documents
+      carefully before investing. SK CapWealth (ARN: 188513) is a registered Mutual Fund Distributor with AMFI. We do
+      not provide investment advisory services. All investments are subject to market risks, and past performance is not
+      indicative of future returns
+    </p>
   </footer>
 
 </body>
 
 <script>
   const slides = document.getElementById("slides");
-const totalSlides = document.querySelectorAll(".slide").length;
-const indicators = document.getElementById("indicators");
+  const totalSlides = document.querySelectorAll(".slide").length;
+  const indicators = document.getElementById("indicators");
 
-console.log(slides);
-
-let index = 0;
-
-// Create dots
-for (let i = 0; i < totalSlides; i++) {
-  const dot = document.createElement("div");
-  dot.classList.add("dot");
-
-  if (i === 0) dot.classList.add("active");
-
-  indicators.appendChild(dot);
-}
-
-const dots = document.querySelectorAll(".dot");
-
-function updateCarousel() {
   console.log(slides);
-  slides.style.transform = `translateX(-${index * 100}%)`;
 
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
-}
+  let index = 0;
 
-function nextSlide() {
-  index = (index + 1) % totalSlides;
-  updateCarousel();
-}
+  // Create dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
 
-setInterval(nextSlide, 3000);
+    if (i === 0) dot.classList.add("active");
+
+    indicators.appendChild(dot);
+  }
+
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    console.log(slides);
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  setInterval(nextSlide, 3000);
 
 </script>
 
