@@ -390,10 +390,13 @@
   <section class="form">
     <h2>Start your financial journey today</h2>
     <p>Fill the form and our advisor will connect within 24 hours.</p>
-    <input type="text" placeholder="Name">
-    <input type="text" placeholder="Phone">
-    <input type="email" placeholder="Email">
-    <button>Submit</button>
+    <form action="https://api.web3forms.com/submit" method="POST">  
+      <input type="hidden" name="access_key" value="859f2145-a902-4b7d-8dba-3d3d781a019b">
+      <input type="text" placeholder="Name" name="Name">
+      <input type="text" placeholder="Phone" name="Phone">
+      <input type="email" placeholder="Email" name="Email">
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
   <!-- CONTACT -->

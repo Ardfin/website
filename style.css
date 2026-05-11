@@ -138,13 +138,14 @@ nav a:hover {
 }
 
 .btn.secondary {
-  background: transparent;
+  color: var(--btn-color);
+  background: white;
   border: 1px solid white;
 }
 
 .btn:hover {
-  background: white;
-  color: var(--btn-color);
+  color: white;
+  background: transparent;
 }
 
 .big-quote {
