@@ -76,3 +76,22 @@ async function loop() {
     i = (i + 1) % texts.length; // switch line
   }
 }
+
+texts2 = [
+  "personalized.",
+  "unbiased.",
+  "for every goal of life."
+];
+
+async function loop2() {
+  const el = document.getElementById("text2");
+  let i = 0;
+
+  while (true) {
+    await type(el, texts2[i]);
+    await sleep(delay);
+    await erase(el);
+
+    i = (i + 1) % texts2.length; // switch line
+  }
+}
